@@ -1,0 +1,24 @@
+server:
+  port: 8080
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8011/eureka 
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+      - id: userModule
+        uri: lb://microservice-user
+        predicates:
+        - Path=/user/**
+      - id: InteractionModule
+        uri: lb://microservice-interaction
+        predicates:
+        - Path=/interaction/**
+
+

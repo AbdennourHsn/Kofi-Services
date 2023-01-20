@@ -1,0 +1,6 @@
+
+spring.application.name=microservice-gateway
+server.port=8080
+
+#Client registration properties :
+eureka.client.serviceUrl.defaultZone: http://localhost:8011/eureka/
